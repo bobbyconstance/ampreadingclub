@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AMP Publishing House — Anthony Michael Perri</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
   body {
     background-color: #000;
@@ -29,8 +28,8 @@
     margin: 0.2rem 0;
   }
   .main-name {
-    font-size: 2.2rem;
-    font-family: "Share Tech Mono", monospace;
+    font-size: 2.4rem;
+    font-family: "Courier New", Courier, monospace;
     color: #33ff33;
     letter-spacing: 0.05em;
   }
@@ -45,14 +44,29 @@
     border: 2px solid #0f0;
     object-fit: cover;
   }
+
   .section-title {
-    color: #f0f;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
+    font-weight: bold;
   }
+
+  .section-title.book {
+    color: #e07be0; /* soft magenta */
+  }
+
+  .section-title.archive {
+    color: #66ccff; /* neon blue */
+  }
+
+  .section-title.contact {
+    color: #e07be0; /* soft magenta */
+  }
+
   .writing-category {
     color: #33ff33;
   }
+
   blockquote {
     font-style: italic;
     border-left: 4px solid #0f0;
@@ -60,10 +74,12 @@
     padding-left: 1rem;
     color: #afa;
   }
+
   ul.archive-list {
     list-style-type: square;
     padding-left: 1.2rem;
   }
+
   footer {
     margin-top: 3rem;
     font-size: 0.9rem;
@@ -84,13 +100,13 @@
 </section>
 
 <section>
-  <h3 class="section-title">My Book</h3>
+  <h3 class="section-title book">My Book</h3>
   <p><a href="https://www.amazon.com/dp/B0XXXXXXX" target="_blank" rel="noopener noreferrer">Lonely Boxer</a> — Available on Amazon</p>
   <blockquote>"A compelling debut that grabs you by the heart and never lets go." — Reviewer Name</blockquote>
 </section>
 
 <section>
-  <h3 class="section-title">Archive of Writing</h3>
+  <h3 class="section-title archive">Archive of Writing</h3>
 
   <h4 class="writing-category">Fiction</h4>
   <ul class="archive-list">
@@ -126,7 +142,7 @@
 </section>
 
 <section class="contact">
-  <h3 class="section-title">Contact</h3>
+  <h3 class="section-title contact">Contact</h3>
   <p>Email: <a href="mailto:ampreadingclub@gmail.com">ampreadingclub@gmail.com</a></p>
   <p>All-Links: <a href="https://beacons.ai/ampofficial" target="_blank" rel="noopener noreferrer">beacons.ai/ampofficial</a></p>
   <p>Available for freelance work, collaborations, and speaking engagements.</p>
