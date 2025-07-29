@@ -27,6 +27,12 @@
   h1, h2 {
     margin: 0.2rem 0;
   }
+  .main-name {
+    font-size: 2.2rem;
+    font-family: "OCR A", "Share Tech Mono", "Courier Prime", monospace;
+    color: #33ff33;
+    letter-spacing: 0.05em;
+  }
   .bio, .contact {
     margin-bottom: 1.5rem;
   }
@@ -39,9 +45,12 @@
     object-fit: cover;
   }
   .section-title {
-    color: #ff0;
+    color: #ccc;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
+  }
+  .writing-category {
+    color: #33ff33;
   }
   blockquote {
     font-style: italic;
@@ -65,8 +74,7 @@
 <body>
 
 <header>
-  <h1>Anthony Michael Perri</h1>
-  <h2>AMP Publishing House</h2>
+  <h1 class="main-name">ANTHONY MICHAEL PERRI</h1>
   <img src="AMPFACE.JPG" alt="Anthony Michael Perri headshot" class="headshot" />
 </header>
 
@@ -82,44 +90,44 @@
 
 <section>
   <h3 class="section-title">Archive of Writing</h3>
-  <p>Below is a full archive of my published work. (Add more links as you publish.)</p>
 
-<h4>Fiction</h4>
-<ul class="archive-list">
-  <li><a href="stories/The-Return-of-Prince-Nazir.pdf" target="_blank">The Return of Prince Nazir (2018)</a></li>
-  <li><a href="stories/The-Mistrustful-Man-of-Málaga.pdf" target="_blank">The Mistrustful Man of Málaga (2019)</a></li>
-  <li><a href="stories/Heaven-for-Lovers.pdf" target="_blank">Heaven for Lovers (2019)</a></li>
-  <li><a href="stories/The-Construction-Boys.pdf" target="_blank">The Construction Boys (2019)</a></li>
-  <li><a href="stories/The-Eugenicist.pdf" target="_blank">The Eugenicist (2019)</a></li>
-  <li><a href="stories/GOVERNMENT-MAN.pdf" target="_blank">GOVERNMENT MAN (2019)</a></li>
-  <li><a href="stories/The-Colombia-Report.pdf" target="_blank">The Colombia Report (2020)</a></li>
-  <li><a href="stories/Admitted.pdf" target="_blank">Admitted (2020)</a></li>
-</ul>
-
-<h4>Essays</h4>
-<ul class="archive-list">
-  <li><a href="stories/Phenomenology-Paper-1-The-Genesis-of-Anticipation.pdf" target="_blank">Phenomenology Paper 1: The Genesis of Anticipation (2017)</a></li>
-  <li><a href="stories/Phenomenology-Paper-2-Ignorance-is-Bliss.pdf" target="_blank">Phenomenology Paper 2: Ignorance is Bliss (2017)</a></li>
-  <li><a href="stories/Phenomenology-Paragraph-1-The-Glen.pdf" target="_blank">Phenomenology Paragraph 1: The Glen (2017)</a></li>
-  <li><a href="stories/The-Nature-of-Standing.pdf" target="_blank">The Nature of Standing [The Standing of Nature] (2017)</a></li>
-  <li><a href="stories/Does-True-Love-Exist.pdf" target="_blank">Does True Love Exist? (2018)</a></li>
-  <li><a href="stories/The-Bat.pdf" target="_blank">The Bat (2018)</a></li>
-  <li><a href="stories/Hegel-Paper-1-Time-and-Space.pdf" target="_blank">Hegel Paper 1: Time and Space (2018)</a></li>
-  <li><a href="stories/Hegel-Paper-2-The-Nature-of-Desire.pdf" target="_blank">Hegel Paper 2: The Nature of Desire (2018)</a></li>
-  <li><a href="stories/Hegel-Paper-3-Tantalus-Narcissus-and-Sisyphus.pdf" target="_blank">Hegel Paper 3: Tantalus, Narcissus and Sisyphus (2018)</a></li>
-  <li><a href="stories/Hegel-Paper-4-Physiognomy-or-What-I-Thought-About-Your-Body.pdf" target="_blank">Hegel Paper 4: Physiognomy or What I Thought About Your Body (2018)</a></li>
-  <li><a href="stories/Essays-on-Love.pdf" target="_blank">Essays on Love (2021)</a></li>
-</ul>
-
-  <h4>Poetry</h4>
+  <h4 class="writing-category">Fiction</h4>
   <ul class="archive-list">
-    <!-- Add poetry links here later -->
+    <li><a href="stories/The-Return-of-Prince-Nazir.pdf" target="_blank">The Return of Prince Nazir (2018)</a></li>
+    <li><a href="stories/The-Mistrustful-Man-of-Málaga.pdf" target="_blank">The Mistrustful Man of Málaga (2019)</a></li>
+    <li><a href="stories/Heaven-for-Lovers.pdf" target="_blank">Heaven for Lovers (2019)</a></li>
+    <li><a href="stories/The-Construction-Boys.pdf" target="_blank">The Construction Boys (2019)</a></li>
+    <li><a href="stories/The-Eugenicist.pdf" target="_blank">The Eugenicist (2019)</a></li>
+    <li><a href="stories/GOVERNMENT-MAN.pdf" target="_blank">GOVERNMENT MAN (2019)</a></li>
+    <li><a href="stories/The-Colombia-Report.pdf" target="_blank">The Colombia Report (2020)</a></li>
+    <li><a href="stories/Admitted.pdf" target="_blank">Admitted (2020)</a></li>
+  </ul>
+
+  <h4 class="writing-category">Essays</h4>
+  <ul class="archive-list">
+    <li><a href="stories/Phenomenology-Paper-1-The-Genesis-of-Anticipation.pdf" target="_blank">Phenomenology Paper 1: The Genesis of Anticipation (2017)</a></li>
+    <li><a href="stories/Phenomenology-Paper-2-Ignorance-is-Bliss.pdf" target="_blank">Phenomenology Paper 2: Ignorance is Bliss (2017)</a></li>
+    <li><a href="stories/Phenomenology-Paragraph-1-The-Glen.pdf" target="_blank">Phenomenology Paragraph 1: The Glen (2017)</a></li>
+    <li><a href="stories/The-Nature-of-Standing.pdf" target="_blank">The Nature of Standing [The Standing of Nature] (2017)</a></li>
+    <li><a href="stories/Does-True-Love-Exist.pdf" target="_blank">Does True Love Exist? (2018)</a></li>
+    <li><a href="stories/The-Bat.pdf" target="_blank">The Bat (2018)</a></li>
+    <li><a href="stories/Hegel-Paper-1-Time-and-Space.pdf" target="_blank">Hegel Paper 1: Time and Space (2018)</a></li>
+    <li><a href="stories/Hegel-Paper-2-The-Nature-of-Desire.pdf" target="_blank">Hegel Paper 2: The Nature of Desire (2018)</a></li>
+    <li><a href="stories/Hegel-Paper-3-Tantalus-Narcissus-and-Sisyphus.pdf" target="_blank">Hegel Paper 3: Tantalus, Narcissus and Sisyphus (2018)</a></li>
+    <li><a href="stories/Hegel-Paper-4-Physiognomy-or-What-I-Thought-About-Your-Body.pdf" target="_blank">Hegel Paper 4: Physiognomy or What I Thought About Your Body (2018)</a></li>
+    <li><a href="stories/Essays-on-Love.pdf" target="_blank">Essays on Love (2021)</a></li>
+  </ul>
+
+  <h4 class="writing-category">Poetry</h4>
+  <ul class="archive-list">
+    <li>(Coming Soon)</li>
   </ul>
 </section>
 
 <section class="contact">
-  <h3 class="section-title">Contact Me</h3>
-  <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+  <h3 class="section-title">Contact</h3>
+  <p>Email: <a href="mailto:ampreadingclub@gmail.com">ampreadingclub@gmail.com</a></p>
+  <p>Beacons page: <a href="https://beacons.ai/ampofficial" target="_blank" rel="noopener noreferrer">beacons.ai/ampofficial</a></p>
   <p>Available for freelance work, collaborations, and speaking engagements.</p>
 </section>
 
