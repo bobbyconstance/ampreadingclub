@@ -30,6 +30,9 @@
   .bio, .contact {
     margin-bottom: 1.5rem;
   }
+  .bio p {
+    color: #aaffaa;
+  }
   .headshot {
     float: right;
     margin-left: 1rem;
@@ -44,9 +47,10 @@
     width: 100px;
     height: auto;
     border: 2px solid #0f0;
+    cursor: pointer;
   }
   .section-title {
-    color: #33ccff;
+    color: #0000EE;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
   }
@@ -58,7 +62,7 @@
     color: #afa;
   }
   blockquote.description {
-    color: #0000EE;
+    color: #33ccff;
     font-style: normal;
   }
   ul.archive-list {
@@ -70,6 +74,26 @@
     font-size: 0.9rem;
     border-top: 1px solid #0f0;
     padding-top: 1rem;
+  }
+
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 5vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  .modal img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
   }
 </style>
 </head>
@@ -87,7 +111,7 @@
 
 <section>
   <h3 class="section-title">Published Works</h3>
-  <img src="lonely-boxer-cover.jpg" alt="Lonely Boxer cover" class="book-cover" />
+  <img src="lonely-boxer-cover.jpg" alt="Lonely Boxer cover" class="book-cover" id="coverThumb" />
   <p><a href="https://www.amazon.ca/dp/1778179924" target="_blank" rel="noopener noreferrer"><strong><em>Lonely Boxer</em></strong></a> — Available on Amazon</p>
   <blockquote class="description">
     <strong>Why leave it up to karma when you've got two fists?</strong><br><br>
@@ -103,6 +127,11 @@
     — Edwin Turner, <a href="https://biblioklept.org/2022/06/21/anthony-michael-perris-lonely-boxer-book-acquired-7-june-2022/" target="_blank" rel="noopener noreferrer">biblioklept.org</a>
   </blockquote>
 </section>
+
+<!-- Modal -->
+<div id="coverModal" class="modal">
+  <img src="lonely-boxer-full-cover.jpg" alt="Full Lonely Boxer cover spread" />
+</div>
 
 <section>
   <h3 class="section-title">Fiction</h3>
@@ -152,7 +181,6 @@
 <section>
   <h3 class="section-title">Professional Writing</h3>
   <ul class="archive-list">
-    <!-- UX, copywriting, grant writing links go here -->
     <li>(More samples coming soon)</li>
   </ul>
 </section>
@@ -167,6 +195,27 @@
 <footer>
   <p>© 2025 Anthony Michael Perri — AMP Publishing House</p>
 </footer>
+
+<script>
+  const modal = document.getElementById("coverModal");
+  const img = document.getElementById("coverThumb");
+
+  img.onclick = function() {
+    modal.style.display = "block";
+  };
+
+  document.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  document.onkeydown = function(e) {
+    if (e.key === "Escape") {
+      modal.style.display = "none";
+    }
+  };
+</script>
 
 </body>
 </html>
