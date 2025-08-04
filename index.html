@@ -75,7 +75,7 @@
     cursor: pointer;
   }
   .section-title {
-    color: #0000EE;
+    color: #3366ff;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
   }
@@ -93,6 +93,9 @@
   ul.archive-list {
     list-style-type: square;
     padding-left: 1.2rem;
+  }
+  ul.archive-list li {
+    margin-bottom: 0.4rem;
   }
   ul.archive-list a {
     color: #0f0;
@@ -179,7 +182,7 @@
 <section>
   <h3 class="section-title">Film</h3>
   <ul class="archive-list">
-<li><a href="https://bobbyconstance.github.io/crimespreemayhem/" target="_blank">Crime Spree Mayhem (Project Site)</a></li>
+    <li><a href="https://bobbyconstance.github.io/crimespreemayhem/" target="_blank">Crime Spree Mayhem (Project Site)</a></li>
   </ul>
 </section>
 
@@ -250,8 +253,6 @@
   const domain = "gmail.com";
   document.getElementById("email").innerHTML = '<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>';
 </script>
-<!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "726b47d6bb464e69aa6157e736a5b020"}'></script>
-<!-- End Cloudflare Web Analytics -->
 </body>
 </html>
