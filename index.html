@@ -7,7 +7,7 @@
 
 <!-- SEO META -->
 <meta name="description" content="Official site of Anthony Michael Perri, author of Lonely Boxer and other fiction, essays, and screen projects. Explore published works and writing." />
-<meta name="keywords" content="Anthony Michael Perri, Anthony Perri, Lonely Boxer, AMP Publishing House, fiction, writing, author, essays, Canadian writer, surreal fiction" />
+<meta name="keywords" content="Anthony Michael Perri, Anthony Perri, Lonely Boxer, AMP Publishing House, AMP Reading Club, ampreadingclub, fiction, writing, author, essays, Canadian writer, surreal fiction" />
 <meta name="author" content="Anthony Michael Perri" />
 
 <!-- Open Graph / Facebook -->
@@ -103,8 +103,6 @@
     border-top: 1px solid #0f0;
     padding-top: 1rem;
   }
-
-  /* Modal styles */
   .modal {
     display: none;
     position: fixed;
@@ -142,25 +140,24 @@
   <img src="lonely-boxer-cover.jpg" alt="Lonely Boxer cover" class="book-cover" id="coverThumb" />
   <p>
     <a href="https://www.amazon.ca/dp/1778179924" target="_blank" rel="noopener noreferrer" class="book-link"><strong><em>Lonely Boxer</em></strong></a>
-    —
+    &mdash;
     <a href="https://www.amazon.ca/dp/1778179924" target="_blank" rel="noopener noreferrer" class="book-green">Available on Amazon</a>
   </p>
   <blockquote class="description">
     <strong>Why leave it up to karma when you've got two fists?</strong><br><br>
-    Out of jail and back in the ring, Lonely Boxer prepares himself for a title fight against the world's most popular boxer. This is where he's happy — the ring he understands. If only the rest of his life were as simple.<br><br>
+    Out of jail and back in the ring, Lonely Boxer prepares himself for a title fight against the world's most popular boxer. This is where he's happy &mdash; the ring he understands. If only the rest of his life were as simple.<br><br>
     A dark and surreal literary novella told in fragments, with bleak landscapes punched by flashes of humour. Welcome to the third edition (<em>re:DUX</em>) of <strong><em>Lonely Boxer</em></strong>, a psychological deep dive into the bruised and concussed mind of a misunderstood fighter.
   </blockquote>
   <blockquote>
     ".. .Mr. Perri's writings are a demonstration of what a real personal literary style can be."<br>
-    — Joaquín García Weil, <em>Yoga Emotions</em>
+    &mdash; Joaquín García Weil, <em>Yoga Emotions</em>
   </blockquote>
   <blockquote>
     "When I read it comes down to, does this sentence make me want to read the next sentence? And [his] sentences made me want to keep reading."<br>
-    — Edwin Turner, <a href="https://biblioklept.org/2022/06/21/anthony-michael-perris-lonely-boxer-book-acquired-7-june-2022/" target="_blank" rel="noopener noreferrer">biblioklept.org</a>
+    &mdash; Edwin Turner, <a href="https://biblioklept.org/2022/06/21/anthony-michael-perris-lonely-boxer-book-acquired-7-june-2022/" target="_blank" rel="noopener noreferrer">biblioklept.org</a>
   </blockquote>
 </section>
 
-<!-- Modal -->
 <div id="coverModal" class="modal">
   <img src="lonely-boxer-full-cover.jpg" alt="Full Lonely Boxer cover spread" />
 </div>
@@ -219,7 +216,7 @@
 
 <section class="contact">
   <h3 class="section-title">Contact</h3>
-  <p>Email: <a href="mailto:ampreadingclub@gmail.com">ampreadingclub@gmail.com</a></p>
+  <p>Email: <span id="email"></span></p>
   <p>All-Links: <a href="https://beacons.ai/ampofficial" target="_blank" rel="noopener noreferrer">beacons.ai/ampofficial</a></p>
   <p>Available for freelance work, collaborations, and speaking engagements.</p>
 </section>
@@ -247,7 +244,14 @@
       modal.style.display = "none";
     }
   };
+
+  // JavaScript email obfuscation
+  const user = "ampreadingclub";
+  const domain = "gmail.com";
+  document.getElementById("email").innerHTML = '<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>';
 </script>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "726b47d6bb464e69aa6157e736a5b020"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "726b47d6bb464e69aa6157e736a5b020"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>
