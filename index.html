@@ -5,23 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AMP Publishing House — Anthony Michael Perri</title>
 
-<!-- SEO META -->
-<meta name="description" content="Official site of Anthony Michael Perri, author of Lonely Boxer and other fiction, essays, and screen projects. Explore published works and writing." />
-<meta name="keywords" content="Anthony Michael Perri, Anthony Perri, Lonely Boxer, AMP Publishing House, AMP Reading Club, ampreadingclub, fiction, writing, author, essays, Canadian writer, surreal fiction" />
-<meta name="author" content="Anthony Michael Perri" />
-
-<!-- Open Graph / Facebook -->
-<meta property="og:title" content="Anthony Michael Perri | AMP Publishing House" />
-<meta property="og:description" content="Explore the fiction, essays, and projects of Anthony Michael Perri, author of Lonely Boxer." />
-<meta property="og:image" content="https://ampreadingclub.online/lonely-boxer-cover.jpg" />
-<meta property="og:url" content="https://ampreadingclub.online" />
-<meta property="og:type" content="website" />
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Anthony Michael Perri | AMP Publishing House" />
-<meta name="twitter:description" content="Official site of Anthony Michael Perri, author of Lonely Boxer and more." />
-<meta name="twitter:image" content="https://ampreadingclub.online/lonely-boxer-cover.jpg" />
+<!-- TEMPORARILY PREVENT SEARCH ENGINE INDEXING -->
+<meta name="robots" content="noindex, nofollow, noarchive" />
 
 <style>
   body {
@@ -124,9 +109,68 @@
     max-width: 90%;
     max-height: 90%;
   }
+
+  /* PASSWORD SCREEN */
+  #passwordGate {
+    margin-top: 4rem;
+  }
+
+  #passwordGate input {
+    background: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  #passwordGate button {
+    background: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+  }
+
+  #passwordGate button:hover {
+    background: #0f0;
+    color: #000;
+  }
+
+  #passwordError {
+    color: #ed7955;
+  }
+
+  #siteContent {
+    display: none;
+  }
 </style>
 </head>
+
 <body>
+
+<!-- PASSWORD GATE -->
+<div id="passwordGate">
+  <h1>AMP Publishing House</h1>
+  <p>This site is temporarily private.</p>
+
+  <input
+    type="password"
+    id="passwordInput"
+    placeholder="Password"
+    autocomplete="off"
+  />
+
+  <button type="button" id="passwordButton">Enter</button>
+
+  <p id="passwordError"></p>
+</div>
+
+
+<!-- EVERYTHING BELOW THIS POINT IS HIDDEN UNTIL PASSWORD IS ENTERED -->
+<div id="siteContent">
 
 <header>
   <h1>AMP Publishing House</h1>
@@ -147,18 +191,22 @@
     /
     <a href="https://payhip.com/b/NRBYA" target="_blank" rel="noopener noreferrer" class="book-green">E-Version</a>
   </p>
+
   <blockquote class="description">
     <strong>Why leave it up to karma when you've got two fists?</strong><br><br>
     Out of jail and back in the ring, Lonely Boxer prepares himself for a title fight against the world's most popular boxer. This is where he's happy &mdash; the ring he understands. If only the rest of his life were as simple.<br><br>
     A dark and surreal literary novella told in fragments, with bleak landscapes punched by flashes of humour. Welcome to the third edition (<em>re:DUX</em>) of <strong><em>Lonely Boxer</em></strong>, a psychological deep dive into the bruised and concussed mind of a misunderstood fighter.
   </blockquote>
+
   <blockquote>
     ".. .Mr. Perri's writings are a demonstration of what a real personal literary style can be."<br>
     &mdash; Joaquín García Weil, <em>Yoga Emotions</em>
   </blockquote>
+
   <blockquote>
     "When I read it comes down to, does this sentence make me want to read the next sentence? And [his] sentences made me want to keep reading."<br>
-    &mdash; Edwin Turner, <a href="https://biblioklept.org/2022/06/21/anthony-michael-perris-lonely-boxer-book-acquired-7-june-2022/" target="_blank" rel="noopener noreferrer">biblioklept.org</a>
+    &mdash; Edwin Turner,
+    <a href="https://biblioklept.org/2022/06/21/anthony-michael-perris-lonely-boxer-book-acquired-7-june-2022/" target="_blank" rel="noopener noreferrer">biblioklept.org</a>
   </blockquote>
 </section>
 
@@ -230,7 +278,46 @@
   <p>© 2025 AMP Publishing House</p>
 </footer>
 
+</div>
+
+
 <script>
+  /* PASSWORD GATE */
+  const correctPassword = "published2026";
+
+  const passwordGate = document.getElementById("passwordGate");
+  const siteContent = document.getElementById("siteContent");
+  const passwordInput = document.getElementById("passwordInput");
+  const passwordButton = document.getElementById("passwordButton");
+  const passwordError = document.getElementById("passwordError");
+
+  function unlockSite() {
+    if (passwordInput.value === correctPassword) {
+      sessionStorage.setItem("ampAccess", "granted");
+      passwordGate.style.display = "none";
+      siteContent.style.display = "block";
+    } else {
+      passwordError.textContent = "Incorrect password.";
+      passwordInput.value = "";
+      passwordInput.focus();
+    }
+  }
+
+  passwordButton.addEventListener("click", unlockSite);
+
+  passwordInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      unlockSite();
+    }
+  });
+
+  if (sessionStorage.getItem("ampAccess") === "granted") {
+    passwordGate.style.display = "none";
+    siteContent.style.display = "block";
+  }
+
+
+  /* COVER MODAL */
   const modal = document.getElementById("coverModal");
   const img = document.getElementById("coverThumb");
 
@@ -250,11 +337,17 @@
     }
   };
 
-  // JavaScript email obfuscation
+
+  /* EMAIL OBFUSCATION */
   const user = "ampreadingclub";
   const domain = "gmail.com";
-  document.getElementById("email").innerHTML = '<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>';
+
+  document.getElementById("email").innerHTML =
+    '<a href="mailto:' + user + '@' + domain + '">' +
+    user + '@' + domain + '</a>';
 </script>
+
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "726b47d6bb464e69aa6157e736a5b020"}'></script>
+
 </body>
 </html>
